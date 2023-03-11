@@ -1,0 +1,71 @@
+<h2>Add Device</h2>
+<div class="row">
+  <div class="col-md-6 col-sm-12">
+ <div class="container">
+    <div class="row container m-4">
+      <div class="col-6">
+        <div class="container m-4">
+          <form class="w-75">
+  
+            <div class="mb-3">
+              <label class="form-label">Device Name </label>
+              <input type="text" class="form-control" placeholder="Enter Device Name" formControlName="device_name">
+            </div>
+  
+            <div class="mb-3">
+              <label class="form-label">Type_OF Device</label>
+              <!-- <input type="text" class="form-control"> -->
+              <select class="form-control" formControlName="type_of_device">
+                <option>Water in</option>
+                <option>Water out</option>
+                <option>Water Consumed</option>
+                <option>Water Eva</option>
+                <option>Water Perculated</option>
+                <option>Water Accum</option>
+                <option>Water Level</option>
+              </select>
+            </div>
+  
+            <div class="mb-3">
+              <label class="form-label"> User_ID </label>
+              <input type="text" class="form-control" placeholder="Enter User_ID" formControlName="user_id">
+            </div>
+  
+  
+            <div class="mb-3">
+              <label class="form-label">Lattitude</label>
+              <input type="number" class="form-control" id="exampleInputEmail1" placeholder="Enter lattitude"
+                formControlName="lat">
+  
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Longitude</label>
+              <input type="number" class="form-control" placeholder="Enter longitude" formControlName="lng">
+            </div>
+  
+            <div class="mb-3">
+              <label class="form-label">a</label>
+              <input type="number" class="form-control" formControlName="a">
+            </div>
+  
+            <div class="mb-3">
+              <label class="form-label">b</label>
+              <input type="number" class="form-control" formControlName="b">
+            </div>
+  
+            <div class="mb-3">
+              <label class="form-label">hmin</label>
+              <input type="number" class="form-control" formControlName="hmin">
+            </div>
+            <div class="mb-3">
+              <label class="form-label">hmax</label>
+              <input type="number" class="form-control" formControlName="hmax">
+            </div>
+  
+  
+            <button type="submit" class="btn btn-success w-100">Add</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
