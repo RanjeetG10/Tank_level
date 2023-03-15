@@ -1,35 +1,50 @@
-<div class="card-body" style="  margin-left: 25px; margin-right: 25px;">
+<h3 style="margin-left: 25px;">Device Name</h3>
+
+<br>
+<!-- <div class="card-body" style="  margin-left: 25px; margin-right: 25px;">
 <div class="card text-center">
     <div class="card-header">
       <ul class="nav nav-pills card-header-pills">
         <li class="nav-item">
-          <a class="nav-link " href="#">Panel</a>
+            
+          <a class="nav-link active show" href="#"><i class="fa fa-toggle-on" aria-hidden="true"></i>&nbsp;Panel</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Reports</a>
+          <a class="nav-link " href="#"><i class="fa fa-list-ul" aria-hidden="true"></i>&nbsp;Reports</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link disabled" href="#">Config</a>
+          <a class="nav-link " href="#"> <i class="fa fa-wrench" aria-hidden="true"></i>&nbsp;Config</a>
         </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">Water Balance</a>
-          </li>
       </ul>
       <hr>
-      <div class="card-body">
-
-
+              <div _ngcontent-rtc-c8="" class="card-body box-profile">
+                <div _ngcontent-rtc-c8="" class="row">
+                    <div _ngcontent-rtc-c8="" class="col-md-12">
+                        <div _ngcontent-rtc-c8="" class="text-center">
+                            <h1 _ngcontent-rtc-c8=""></h1>
+                            <hr _ngcontent-rtc-c8=""></div>
+                        </div>
+                    </div>
+                </div>
+    </div>    
+    </div>
+  </div> -->
+  <div   class="col-12">
+    <div   class="card">
+      <div   class="card-header">
+        <ul   class="nav nav-pills ml-auto p-2">
+          <li   class="nav-item" routerLink="/dashboard/Panel">
+            <a class="nav-link active show"data-toggle="tab"  >
+              <i class="fa fa-toggle-on" aria-hidden="true" ></i>Panel</a>
+          </li>
+          <li   class="nav-item" routerLink="/dashboard/Reports">
+            <a class="nav-link"data-toggle="tab"  >
+              <i class="fa fa-list-ul" aria-hidden="true"></i>Reports</a>
+          </li>
+          <li   class="nav-item" routerLink="/dashboard/Config">
+            <a class="nav-link" data-toggle="tab">
+              <i class="fa fa-wrench"aria-hidden="true" ></i>Config</a>
+          </li>
+        </ul>
       </div>
-    </div>
-    
-      
-    </div>
-  </div>
-
-
-
-
-
-
-
-<router-outlet></router-outlet>
+  <router-outlet></router-outlet>

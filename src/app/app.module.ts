@@ -16,6 +16,7 @@ import { ConfigComponent } from './DeviceReport/config/config.component';
 import { WaterbalanceComponent } from './DeviceReport/waterbalance/waterbalance.component';
 import { ReportDashComponent } from './DeviceReport/report-dash/report-dash.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,7 +31,8 @@ import { ReportDashComponent } from './DeviceReport/report-dash/report-dash.comp
     ReportsComponent,
     ConfigComponent,
     WaterbalanceComponent,
-    ReportDashComponent
+    ReportDashComponent,
+  
   ],
   imports: [
     BrowserModule,
