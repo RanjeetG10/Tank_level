@@ -10,8 +10,10 @@ export class RestService {
 
   constructor( private _http: HttpClient, private _state: StateService) { }
 
-
+// mention this in ts of required components
 public addDevices(data: any){
+
+// add DB feild in data is to be stored, path  is given from api file
 const url = environment.url + "/devices/add_tank_level"
 return this._http.post(url,data)
 }

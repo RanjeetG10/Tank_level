@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
-
+import { FormsModule,ReactiveFormsModule} from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './Pages/login/login.component';
@@ -16,7 +16,9 @@ import { ReportsComponent } from './DeviceReport/reports/reports.component';
 import { ConfigComponent } from './DeviceReport/config/config.component';
 import { WaterbalanceComponent } from './DeviceReport/waterbalance/waterbalance.component';
 import { ReportDashComponent } from './DeviceReport/report-dash/report-dash.component';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+// import { NgModule } from '@angular/core';
+// import { BrowserModule } from '@angular/platform-browser';
 
 @NgModule({
   declarations: [
@@ -38,7 +40,13 @@ import { ReportDashComponent } from './DeviceReport/report-dash/report-dash.comp
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    // NgModule,
+    // BrowserModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -33,99 +33,69 @@
         </iframe>
       </div>
     </div>
+
     <div class="col-6">
-      <div>
-        <form>
-          <label>Device Name</label>
-          <input
-            type="text"
-            class="form-control"
-            placeholder="Enter Device Name"
-            formControlName="name"
-          />
-          <label>Organisation Name</label>
-          <input
-            type="text"
-            class="form-control"
-            placeholder="Organisation Name"
-            formControlName="org_name"
-          />
-          
+      <div class="container m-4">
+      <div class="form-section">
+        <h3 style="margin-left: 120px; font-size: 25px;">ADD NEW DEVICE</h3>
+        <form class="w-75"  [formGroup]="adddevice" (submit)="add()">
+            <div class="form-input">
+                <input type="text" class="form-control" placeholder="Device Name" formControlName="name">
+            </div>
+            <div class="form-input">
+                <input type="number" class="form-control" placeholder="USER ID" formControlName="user_id">
+            </div>
 
-          <label>Type OF Device</label>
-          <select
-            class="form-control"
-            formControlName="type_of_device"
-            placeholder="Enter flow multiplier"
-          >
-            <option>Water in</option>
-            <option>Water out</option>
-            <option>Water Consumed</option>
-            <option>Water Eva</option>
-            <option>Water Perculated</option>
-            <option>Water Accum</option>
-            <option>Water Level</option>
-          </select>
+          <div class="form-input">
+            <select  placeholder="Type of Device" class="form-control" formControlName="type">
+              <option value="" disabled selected style="color: gray;">Type of Device</option>
+              <option>Water in</option>
+              <option>Water out</option>
+              <option>Water Consumed</option>
+              <option>Water Eva</option>
+              <option>Water Perculated</option>
+              <option>Water Accum</option>
+              <option>Water Level</option>
+            </select>
+        </div>
 
-          <label>UUID</label>
-          <input
-            type="number"
-            class="form-control"
-            formControlName="uuid"
-            placeholder="UUID"
-          />
-
-          <label>Latitude</label>
-          <input
-            type="number"
-            class="form-control"
-            formControlName="lat"
-            placeholder="Enter latitude"
-          />
-
-          <label>Longitude</label>
-          <input
-            type="number"
-            class="form-control"
-            formControlName="lng"
-            placeholder="Enter longitude"
-          />
-
-          <label>SG</label>
-          <input
-            type="number"
-            class="form-control"
-            formControlName="SG"
-            placeholder="Enter SG"
-          />
-
-          <label>AC</label>
-          <input
-            type="number"
-            class="form-control"
-            formControlName="AC"
-            placeholder="Enter ac"
-          />
-
-          <label>hmin</label>
-          <input
-            type="number"
-            class="form-control"
-            placeholder="Enter hmin"
-            formControlName="hmin"
-          />
-
-          <label>hmax</label>
-          <input
-            type="number"
-            class="form-control"
-            placeholder="Enter hmax"
-            formControlName="hmax"
-          />
-
-          <button type="submit" class="btn btn-primary">Add</button>
-        </form>
+        <div class="form-input">
+          <input type="number" class="form-control" placeholder="Latitude"  formControlName="lat">
       </div>
+
+      <div class="form-input">
+        <input type="number" class="form-control" placeholder="Longitude"  formControlName="lng">
     </div>
+
+    <div class="form-input">
+      <input type="number" class="form-control" placeholder="SG"  formControlName="sensor_gap">
+  </div>
+
+  <div class="form-input">
+    <input type="number" class="form-control"  placeholder="AC"  formControlName="ac">
+</div>
+
+<div class="form-input">
+  <input type="number" class="form-control" placeholder="Hmin"  formControlName="hmin">
+</div>
+
+<div class="form-input">
+  <input type="number" class="form-control"  placeholder="Hmax"  formControlName="hmax">
+</div>
+
+<div class="d-grid gap-2" style="margin-top: 18px;">
+
+  <button type="submit" class="btn btn-primary ">Submit</button>
+
+</div>           
+
+            <h6 style="color: rgb(127, 127, 127); margin-top: 10px;">©Bulfro Monitech Pvt. Ltd. All rights reserved</h6>
+        </form>
+    </div>
+
+    </div>
+
+  </div>
+           
   </div>
 </div>
