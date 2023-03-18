@@ -53,6 +53,41 @@ router.post('/add_tank_level', (req, res) =>{
 
   })
 
+// UPDATE device
+router.put('/update_tank_level_devices/:id', (req, res) => {
+    const { id } = req.params;
+    let sqlQuery = 'UPDATE new_tank_level_devices SET';
+    let inputArray = [];
+    Object.keys(req.body).forEach(key => {
+        sqlQuery += key ? `${key} = ?,` : '';
+        key ? inputArray.push(req.body[key]) : '';
+    });
+
+    sqlQuery += 'last_updated = NOW() WHERE id = ?'; //add last_updated to sql query
+    inputArray.push(id);
+    connection.query(sqlQuery, inputArray, (err, result) => {
+        if (err) {
+            const resp = {
+                success: false,
+                message: 'Error' + err,
+                data: null
+            };
+            res.status(400).send(resp)
+        } else {
+            const resp = {
+                success: true,
+                message: 'Details updated successfully',
+                data: result
+            };
+            res.status(200).send(resp)
+        }
+    });
+});
+
+
+
+
+
 
   //DELETE
 
