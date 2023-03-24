@@ -1,5 +1,6 @@
 const mysql = require('mysql');
 const {connection} = require('./db');
+const jwt = require('jsonwebtoken');
 const express = require('express');
 const app = express(); 
 
@@ -19,6 +20,9 @@ app.get('/', (req, res) =>{
     const hours_log = require('./hours_log/hours_log');
     const  logs = require('./logs.js/logs');
     const month_logs  = require('./month_logs/month_logs')
+    const user = require('./user/user');
+    const admin = require('./admin/admin');
+    
     // const admin =require('./admin/admin')
 
 
@@ -26,6 +30,9 @@ app.get('/', (req, res) =>{
     app.use('/hours_log', hours_log)
    app.use ('/logs', logs)
     app.use('/month_logs', month_logs)
+    app.use('/user', user)
+    app.use('/admin', admin)
+   
 //    app.use('/admin', admin)
 
 
