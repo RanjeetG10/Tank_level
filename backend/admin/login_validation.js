@@ -1,6 +1,6 @@
 const { check } = require('express-validator');
 
-function useer_login_validation(){
+function user_login_validation(){
     return [
         check('username')
         .not()
@@ -10,8 +10,8 @@ function useer_login_validation(){
             .not()
             .isEmpty()
             .withMessage('Password is required')
-            .isLength({ min: 4 })
-            .withMessage('Password must be 6 digit')
+            .isLength({ min: 0 })
+            .withMessage('Password must be 0 digit')
     ]
     next();
 }
@@ -27,7 +27,7 @@ function admin_login_validation() {
             .not()
             .isEmpty()
             .withMessage('Password is required')
-            .isLength({ min: 6 })
+            .isLength({ min: 3 })
             .withMessage('Password must be 6 digit')
     ]
     next();
