@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const { connection } = require("../db");
 const {verifyToken, checkadmin, checkuser} = require("../middleware/jwt");
+const { new_brwhms_validation } = require("../admin/login_validation")
 const bodyparser = require('body-parser');
 const jsonParser = bodyparser.json();
 
@@ -14,7 +15,7 @@ router.use((req, res, next) => {
 
 //Add Devices
 
-router.post("/add_tank_level", [checkadmin],  (req, res) => {
+router.post("/add_tank_level", [checkadmin], new_brwhms_validation(), (req, res) => {
   const {  name, user_id, type, lat, lng, sensor_gap, ac, hmin, hmax, location } =
     req.body;
 
@@ -74,15 +75,15 @@ router.post("/add_tank_level", [checkadmin],  (req, res) => {
 
 // });
 
-router.put('/update_user/:id', (req, res) => {
+router.put('/update_devices/:id', (req, res) => {
   const { id } = req.params;
-  let sqlQuery = 'INSERT INTO devices(name, user_id, type, lat, lng, sensor_gap, ac, hmin, hmax, location)VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) WHERE ID = ?';
+  let sqlQuery = 'UPDATE devices SET';
   let inputArray = []; //created array to store input values
   Object.keys(req.body).forEach(key => { //loop through all the keys in req.body
       sqlQuery += key ? ` ${key} = ?, ` : ''; //if key is not empty, add it to sql query
       key ? inputArray.push(req.body[key]) : ''; //if key is not empty, add it to inputArray
   });
-  // sqlQuery += ' last_updated = NOW() WHERE id = ?'; //add last_updated to sql query
+  sqlQuery += ' last_updated = NOW() WHERE id = ?'; //add last_updated to sql query
   inputArray.push(id); //add id to inputArray
   //console.log(sqlQuery); //print sql query
   // console.log(inputArray); //print inputArray
@@ -103,6 +104,7 @@ router.put('/update_user/:id', (req, res) => {
           res.status(200).send(resp)
       }
   });
+  
 });
 
 //DELETE
