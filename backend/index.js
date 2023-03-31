@@ -22,8 +22,8 @@ app.get('/', (req, res) =>{
     const month_logs  = require('./month_logs/month_logs')
     const user = require('./user/user');
     const admin = require('./admin/admin');
-    
-    // const admin =require('./admin/admin')
+    // const mqtt = require('./mqtt/datalogger')
+       // const admin =require('./admin/admin')
 
 
     app.use('/devices', devices)
@@ -32,6 +32,7 @@ app.get('/', (req, res) =>{
     app.use('/month_logs', month_logs)
     app.use('/user', user)
     app.use('/admin', admin)
+    // app.use('/mqtt', mqtt )
    
 //    app.use('/admin', admin)
 
